@@ -14,27 +14,67 @@ export const profile = {
 export const skills = [
   {
     category: "Languages",
-    items: ["JavaScript (ES6+)", "TypeScript", "SQL"],
+    items: [
+      { name: "JavaScript", icon: "SiJavascript" },
+      { name: "TypeScript", icon: "SiTypescript" },
+      { name: "SQL", icon: "FaDatabase" },
+    ],
   },
   {
     category: "Frontend",
-    items: ["React.js", "Next.js", "Redux Toolkit", "Zustand", "Tailwind CSS", "HTML5", "CSS3"],
+    items: [
+      { name: "React.js", icon: "SiReact" },
+      { name: "Next.js", icon: "SiNextdotjs" },
+      { name: "Redux Toolkit", icon: "SiRedux" },
+      { name: "Zustand", icon: "FaStore" },
+      { name: "Tailwind CSS", icon: "SiTailwindcss" },
+      { name: "HTML5", icon: "SiHtml5" },
+      { name: "CSS3", icon: "SiCss" },
+    ],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express.js", "REST APIs", "JWT", "PHP"],
+    items: [
+      { name: "Node.js", icon: "SiNodedotjs" },
+      { name: "Express.js", icon: "SiExpress" },
+      { name: "REST APIs", icon: "FaRoute" },
+      { name: "JWT", icon: "FaKey" },
+      { name: "PHP", icon: "SiPhp" },
+    ],
   },
   {
     category: "Databases",
-    items: ["PostgreSQL", "MongoDB", "MySQL", "Firebase Firestore", "Prisma ORM"],
+    items: [
+      { name: "PostgreSQL", icon: "SiPostgresql" },
+      { name: "MongoDB", icon: "SiMongodb" },
+      { name: "MySQL", icon: "SiMysql" },
+      { name: "Firebase Firestore", icon: "SiFirebase" },
+      { name: "Prisma ORM", icon: "SiPrisma" },
+    ],
   },
   {
     category: "Cloud / Services",
-    items: ["Vercel", "Render", "Neon", "Firebase", "Stripe", "Firebase Authentication"],
+    items: [
+      { name: "Vercel", icon: "SiVercel" },
+      { name: "Render", icon: "SiRender" },
+      { name: "Neon", icon: "SiNeon" },
+      { name: "Firebase", icon: "SiFirebase" },
+      { name: "Stripe", icon: "SiStripe" },
+      { name: "Firebase Authentication", icon: "SiFirebase" },
+    ],
   },
   {
     category: "Tools",
-    items: ["Git", "GitHub", "Postman", "Vite", "Figma", "WordPress", "Divi", "Linux"],
+    items: [
+      { name: "Git", icon: "SiGit" },
+      { name: "GitHub", icon: "SiGithub" },
+      { name: "Postman", icon: "SiPostman" },
+      { name: "Vite", icon: "SiVite" },
+      { name: "Figma", icon: "SiFigma" },
+      { name: "WordPress", icon: "SiWordpress" },
+      { name: "Divi", icon: "FaPalette" },
+      { name: "Linux", icon: "SiLinux" },
+    ],
   },
 ];
 
@@ -89,12 +129,5 @@ export const projects = [
       "Built an AI course generator that creates personalized learning content from user inputs using the Grok API.",
       "Developed responsive React workflows and integrated Firebase for application data and course management.",
     ],
-  },
-];
-
-export const education = [
-  {
-    degree: "Diploma in Computer Science and Engineering",
-    period: "Aug 2026",
   },
 ];
