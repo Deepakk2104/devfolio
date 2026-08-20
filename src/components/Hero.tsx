@@ -1,4 +1,4 @@
-import { ArrowDown, Mail, MapPin } from "lucide-react";
+import { ArrowDown, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { profile } from "@/data/resume";
 
@@ -9,8 +9,7 @@ export default function Hero() {
   return (
     <section className="mx-auto flex w-full max-w-4xl flex-col px-6 pt-24 pb-16 sm:pt-32">
       <p className="mb-4 flex items-center gap-2 text-sm text-muted">
-        <MapPin size={14} />
-        {profile.location} · {profile.availability}
+        {profile.availability}
       </p>
 
       <h1 className="text-4xl font-semibold tracking-tight sm:text-6xl">

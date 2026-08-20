@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Loader2, Mail, MapPin, Send } from "lucide-react";
+import { Loader2, Mail, Send } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { profile } from "@/data/resume";
 
@@ -97,8 +97,7 @@ export default function Contact() {
             </a>
           ))}
           <p className="flex items-center gap-2 pt-2 text-sm text-muted">
-            <MapPin size={14} />
-            {profile.location}, India — {profile.availability}.
+            {profile.availability}.
           </p>
         </div>
 

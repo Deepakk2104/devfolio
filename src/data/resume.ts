@@ -1,7 +1,6 @@
 export const profile = {
   name: "Deepak Kumar",
   role: "Full Stack Developer",
-  location: "Chandigarh",
   email: "deepakk12435@gmail.com",
   github: "https://github.com/Deepakk2104",
   linkedin: "https://www.linkedin.com/in/deepakk2104/",
