@@ -52,6 +52,16 @@ export default function Skills() {
     </div>
   );
 
+  const row = (key: string, reversed = false, ariaHidden = false) => (
+    <div
+      key={key}
+      className={`marquee-inner flex w-max ${reversed ? "marquee-reverse" : ""}`}
+    >
+      {track(`${key}-a`, ariaHidden)}
+      {track(`${key}-b`, true)}
+    </div>
+  );
+
   return (
     <section id="skills" className="mx-auto w-full max-w-4xl scroll-mt-20 px-6 py-16">
       <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Skills</h2>
@@ -66,9 +76,10 @@ export default function Skills() {
         }`}
       >
         <div className="overflow-hidden rounded-xl border border-border bg-card/50 py-4">
-          <div className="marquee-inner flex w-max">
-            {track("a")}
-            {track("b", true)}
+          <div className="flex flex-col gap-3">
+            {row("row-1")}
+            {row("row-2", true, true)}
+            {row("row-3")}
           </div>
         </div>
       </div>
