@@ -19,8 +19,24 @@ export default function Projects() {
       <div className="mt-8 flex flex-col gap-6">
         {projects.map((p, i) => (
           <Reveal key={p.name} delay={i * 120} duration={900}>
-            <article className="flex flex-col gap-5 rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg sm:flex-row">
-              <div className="min-w-0 flex-1">
+            <article className="flex flex-col rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg">
+              {p.image ? (
+                <div className="relative -mx-6 -mt-6 aspect-[16/9] w-[calc(100%+3rem)] overflow-hidden rounded-t-xl border-b border-border">
+                  <Image
+                    src={p.image}
+                    alt={`${p.name} screenshot`}
+                    fill
+                    sizes="(max-width: 896px) 100vw, 896px"
+                    className="object-cover object-top"
+                  />
+                </div>
+              ) : (
+                <div className="flex aspect-[16/9] w-full items-center justify-center rounded-lg border border-dashed border-border bg-background text-center text-sm text-muted">
+                  Add screenshot
+                </div>
+              )}
+
+              <div className="mt-5 min-w-0 flex-1">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <h3 className="text-xl font-semibold tracking-tight">
                     {p.name}
@@ -56,24 +72,6 @@ export default function Projects() {
                     Live demo
                   </a>
                 </div>
-              </div>
-
-              <div className="shrink-0 sm:w-48">
-                {p.image ? (
-                  <div className="relative aspect-video w-full overflow-hidden rounded-lg border border-border sm:aspect-auto sm:h-full sm:min-h-32">
-                    <Image
-                      src={p.image}
-                      alt={`${p.name} screenshot`}
-                      fill
-                      sizes="192px"
-                      className="object-cover object-top"
-                    />
-                  </div>
-                ) : (
-                  <div className="flex aspect-video w-full items-center justify-center rounded-lg border border-dashed border-border bg-background text-center text-xs text-muted sm:h-full sm:min-h-32">
-                    Add screenshot
-                  </div>
-                )}
               </div>
             </article>
           </Reveal>
