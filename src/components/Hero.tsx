@@ -5,7 +5,7 @@ import { profile } from "@/data/resume";
 import Reveal from "./Reveal";
 
 export const resumeUrl =
-  "https://drive.google.com/file/d/1mNgWI3mByA5rh648zTgv3lhVYyqb4K9n/view?usp=drive_open";
+  "https://drive.google.com/file/d/10ooOttla1dVY1O-8db7hrhpOCOvko3za/view?usp=drive_open";
 
 export default function Hero() {
   return (
