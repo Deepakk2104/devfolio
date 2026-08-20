@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Loader2, Mail, Send } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { profile } from "@/data/resume";
+import Reveal from "./Reveal";
 
 const channels = [
   {
@@ -69,16 +70,18 @@ export default function Contact() {
 
   return (
     <section id="contact" className="mx-auto w-full max-w-4xl scroll-mt-20 px-6 py-16">
-      <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-        Contact
-      </h2>
-      <p className="mt-2 max-w-2xl text-muted">
-        Open to remote opportunities and interesting projects. Send me a message
-        — I usually reply quickly.
-      </p>
+      <Reveal>
+        <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          Contact
+        </h2>
+        <p className="mt-2 max-w-2xl text-muted">
+          Open to remote opportunities and interesting projects. Send me a message
+          — I usually reply quickly.
+        </p>
+      </Reveal>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-5">
-        <div className="flex flex-col gap-4 lg:col-span-2">
+        <Reveal className="flex flex-col gap-4 lg:col-span-2" delay={100}>
           {channels.map((c) => (
             <a
               key={c.label}
@@ -99,9 +102,10 @@ export default function Contact() {
           <p className="flex items-center gap-2 pt-2 text-sm text-muted">
             {profile.availability}.
           </p>
-        </div>
+        </Reveal>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 lg:col-span-3">
+        <Reveal className="lg:col-span-3" delay={200}>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="flex flex-col gap-1.5">
               <label htmlFor="name" className="text-sm font-medium">
@@ -178,6 +182,7 @@ export default function Contact() {
             <p className="text-sm text-red-600 dark:text-red-400">{errorMsg}</p>
           )}
         </form>
+        </Reveal>
       </div>
     </section>
   );

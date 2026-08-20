@@ -1,6 +1,7 @@
 import { ArrowDown, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { profile } from "@/data/resume";
+import Reveal from "./Reveal";
 
 export const resumeUrl =
   "https://drive.google.com/file/d/1mNgWI3mByA5rh648zTgv3lhVYyqb4K9n/view?usp=drive_open";
@@ -8,24 +9,33 @@ export const resumeUrl =
 export default function Hero() {
   return (
     <section className="mx-auto flex w-full max-w-4xl flex-col px-6 pt-24 pb-16 sm:pt-32">
-      <p className="mb-4 flex items-center gap-2 text-sm text-muted">
-        {profile.availability}
-      </p>
+      <Reveal duration={900}>
+        <p className="mb-4 flex items-center gap-2 text-sm text-muted">
+          {profile.availability}
+        </p>
+      </Reveal>
 
-      <h1 className="text-4xl font-semibold tracking-tight sm:text-6xl">
-        Hi, I&apos;m{" "}
-        <span className="text-accent">{profile.name}</span>
-      </h1>
+      <Reveal delay={100} duration={900}>
+        <h1 className="text-4xl font-semibold tracking-tight sm:text-6xl">
+          Hi, I&apos;m{" "}
+          <span className="text-accent">{profile.name}</span>
+        </h1>
+      </Reveal>
 
-      <p className="mt-4 max-w-2xl text-lg font-medium text-foreground sm:text-xl">
-        {profile.role}
-      </p>
+      <Reveal delay={200} duration={900}>
+        <p className="mt-4 max-w-2xl text-lg font-medium text-foreground sm:text-xl">
+          {profile.role}
+        </p>
+      </Reveal>
 
-      <p className="mt-5 max-w-2xl text-base leading-7 text-muted sm:text-lg">
-        {profile.summary}
-      </p>
+      <Reveal delay={300} duration={900}>
+        <p className="mt-5 max-w-2xl text-base leading-7 text-muted sm:text-lg">
+          {profile.summary}
+        </p>
+      </Reveal>
 
-      <div className="mt-8 flex flex-wrap items-center gap-3">
+      <Reveal delay={400} duration={900}>
+        <div className="mt-8 flex flex-wrap items-center gap-3">
         <a
           href="#contact"
           className="inline-flex items-center gap-2 rounded-md bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
@@ -68,7 +78,8 @@ export default function Hero() {
             <Mail size={18} />
           </a>
         </div>
-      </div>
+        </div>
+      </Reveal>
     </section>
   );
 }

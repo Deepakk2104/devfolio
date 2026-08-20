@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { skills } from "@/data/resume";
 import { SkillIcon } from "./SkillIcon";
+import Reveal from "./Reveal";
 
 function useInView<T extends HTMLElement>(threshold = 0.15) {
   const ref = useRef<T>(null);
@@ -64,10 +65,12 @@ export default function Skills() {
 
   return (
     <section id="skills" className="mx-auto w-full max-w-4xl scroll-mt-20 px-6 py-16">
-      <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Skills</h2>
-      <p className="mt-2 text-muted">
-        Technologies and tools I work with day to day.
-      </p>
+      <Reveal>
+        <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Skills</h2>
+        <p className="mt-2 text-muted">
+          Technologies and tools I work with day to day.
+        </p>
+      </Reveal>
 
       <div
         ref={ref}
