@@ -2,6 +2,9 @@ import { ArrowDown, Mail, MapPin } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { profile } from "@/data/resume";
 
+export const resumeUrl =
+  "https://drive.google.com/drive/quota";
+
 export default function Hero() {
   return (
     <section className="mx-auto flex w-full max-w-4xl flex-col px-6 pt-24 pb-16 sm:pt-32">
@@ -32,10 +35,12 @@ export default function Hero() {
           <ArrowDown size={16} />
         </a>
         <a
-          href="#projects"
+          href={resumeUrl}
+          target="_blank"
+          rel="noreferrer"
           className="inline-flex items-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-border/50"
         >
-          View projects
+          Download resume
         </a>
         <div className="flex items-center gap-2">
           <a

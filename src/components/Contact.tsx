@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { profile } from "@/data/resume";
 
@@ -8,12 +8,6 @@ const channels = [
     value: profile.email,
     href: `mailto:${profile.email}`,
     icon: Mail,
-  },
-  {
-    label: "Phone",
-    value: profile.phone,
-    href: profile.phoneHref,
-    icon: Phone,
   },
   {
     label: "GitHub",

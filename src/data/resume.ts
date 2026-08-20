@@ -3,8 +3,6 @@ export const profile = {
   role: "Full Stack Developer",
   location: "Chandigarh",
   email: "deepakk12435@gmail.com",
-  phone: "+91 7681918357",
-  phoneHref: "tel:+917681918357",
   github: "https://github.com/Deepakk2104",
   linkedin: "https://www.linkedin.com/in/deepakk2104/",
   availability: "Open to Remote Opportunities",

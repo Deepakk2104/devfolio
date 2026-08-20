@@ -1,4 +1,4 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { profile } from "@/data/resume";
 
@@ -34,13 +34,6 @@ export default function Footer() {
             className="text-muted transition-colors hover:text-foreground"
           >
             <Mail size={18} />
-          </a>
-          <a
-            href={profile.phoneHref}
-            aria-label="Phone"
-            className="text-muted transition-colors hover:text-foreground"
-          >
-            <Phone size={18} />
           </a>
         </div>
       </div>
