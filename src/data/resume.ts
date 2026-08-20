@@ -2,6 +2,7 @@ export const profile = {
   name: "Deepak Kumar",
   role: "Full Stack Developer",
   email: "deepakk12435@gmail.com",
+  emailHref: `https://mail.google.com/mail/?view=cm&fs=1&to=deepakk12435@gmail.com`,
   github: "https://github.com/Deepakk2104",
   linkedin: "https://www.linkedin.com/in/deepakk2104/",
   availability: "Open to Remote Opportunities",

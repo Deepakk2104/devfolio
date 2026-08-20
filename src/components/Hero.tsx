@@ -76,7 +76,7 @@ export default function Hero() {
                   <FaLinkedin size={18} />
                 </a>
                 <a
-                  href={`mailto:${profile.email}`}
+                  href={profile.emailHref}
                   aria-label="Email"
                   className="flex h-10 w-10 items-center justify-center rounded-md border border-border text-muted transition-colors hover:text-foreground hover:bg-border/50"
                 >

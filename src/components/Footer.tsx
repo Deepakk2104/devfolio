@@ -29,7 +29,7 @@ export default function Footer() {
             <FaLinkedin size={18} />
           </a>
           <a
-            href={`mailto:${profile.email}`}
+            href={profile.emailHref}
             aria-label="Email"
             className="text-muted transition-colors hover:text-foreground"
           >

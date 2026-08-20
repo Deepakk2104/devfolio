@@ -10,7 +10,7 @@ const channels = [
   {
     label: "Email",
     value: profile.email,
-    href: `mailto:${profile.email}`,
+    href: profile.emailHref,
     icon: Mail,
   },
   {
