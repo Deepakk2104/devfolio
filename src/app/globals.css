@@ -90,6 +90,12 @@ body {
   animation: glow 8s ease-in-out infinite;
 }
 
+@media (min-width: 640px) {
+  .hero-glow {
+    display: none;
+  }
+}
+
 .avatar-float {
   animation: float 5s ease-in-out infinite;
 }

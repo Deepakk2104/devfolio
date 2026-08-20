@@ -21,13 +21,13 @@ export default function Projects() {
           <Reveal key={p.name} delay={i * 120} duration={900}>
             <article className="flex flex-col rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg">
               {p.image ? (
-                <div className="relative -mx-6 -mt-6 aspect-[16/9] w-[calc(100%+3rem)] overflow-hidden rounded-t-xl border-b border-border">
+                <div className="relative -mx-6 -mt-6 aspect-[16/9] max-h-72 w-[calc(100%+3rem)] overflow-hidden rounded-t-xl border-b border-border bg-background sm:max-h-96">
                   <Image
                     src={p.image}
                     alt={`${p.name} screenshot`}
                     fill
                     sizes="(max-width: 896px) 100vw, 896px"
-                    className="object-cover object-top"
+                    className="object-contain p-2"
                   />
                 </div>
               ) : (
