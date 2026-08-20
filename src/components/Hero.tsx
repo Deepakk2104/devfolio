@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { profile } from "@/data/resume";
 
 export const resumeUrl =
-  "https://drive.google.com/drive/quota";
+  "https://drive.google.com/file/d/1mNgWI3mByA5rh648zTgv3lhVYyqb4K9n/view?usp=drive_open";
 
 export default function Hero() {
   return (
