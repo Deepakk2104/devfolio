@@ -13,9 +13,9 @@ export default function Experience() {
       </Reveal>
 
       <div className="mt-8 flex flex-col gap-6">
-        {experience.map((job) => (
-          <Reveal key={`${job.company}-${job.role}`}>
-            <article className="rounded-xl border border-border bg-card p-6">
+        {experience.map((job, i) => (
+          <Reveal key={`${job.company}-${job.role}`} delay={i * 150} duration={800}>
+            <article className="rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <h3 className="flex items-center gap-2 text-xl font-semibold tracking-tight">
                   <Briefcase size={18} className="text-accent" />
