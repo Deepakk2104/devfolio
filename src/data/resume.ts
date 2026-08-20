@@ -7,7 +7,7 @@ export const profile = {
   availability: "Open to Remote Opportunities",
   tagline: "Full-stack developer shipping production web applications.",
   summary:
-    "Full-stack developer with hands-on experience building and shipping production web applications using React, Next.js, TypeScript, Node.js, and Express. Skilled in designing REST APIs, relational database schemas, and secure authentication flows, with a strong focus on responsive UI and frontend performance optimization.",
+    "with hands-on experience building and shipping production web applications using React, Next.js, TypeScript, Node.js, and Express. Skilled in designing REST APIs, relational database schemas, and secure authentication flows, with a strong focus on responsive UI and frontend performance optimization.",
 };
 
 export const skills = [

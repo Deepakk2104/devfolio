@@ -46,18 +46,21 @@ body {
   color: #ffffff;
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
+@keyframes marquee {
+  from {
+    transform: translateX(0);
   }
-  50% {
-    transform: translateY(-5px);
+  to {
+    transform: translateX(-50%);
   }
 }
 
-.skill-pill {
-  animation: float 3s ease-in-out infinite;
+.marquee-inner {
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-inner:hover {
+  animation-play-state: paused;
 }
 
 /* simple scrollbar */
