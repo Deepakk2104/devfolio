@@ -1,0 +1,102 @@
+export const profile = {
+  name: "Deepak Kumar",
+  role: "Full Stack Developer",
+  location: "Chandigarh",
+  email: "deepakk12435@gmail.com",
+  phone: "+91 7681918357",
+  phoneHref: "tel:+917681918357",
+  github: "https://github.com/Deepakk2104",
+  linkedin: "https://www.linkedin.com/in/deepakk2104/",
+  availability: "Open to Remote Opportunities",
+  tagline: "Full-stack developer shipping production web applications.",
+  summary:
+    "Full-stack developer with hands-on experience building and shipping production web applications using React, Next.js, TypeScript, Node.js, and Express. Skilled in designing REST APIs, relational database schemas, and secure authentication flows, with a strong focus on responsive UI and frontend performance optimization.",
+};
+
+export const skills = [
+  {
+    category: "Languages",
+    items: ["JavaScript (ES6+)", "TypeScript", "SQL"],
+  },
+  {
+    category: "Frontend",
+    items: ["React.js", "Next.js", "Redux Toolkit", "Zustand", "Tailwind CSS", "HTML5", "CSS3"],
+  },
+  {
+    category: "Backend",
+    items: ["Node.js", "Express.js", "REST APIs", "JWT", "PHP"],
+  },
+  {
+    category: "Databases",
+    items: ["PostgreSQL", "MongoDB", "MySQL", "Firebase Firestore", "Prisma ORM"],
+  },
+  {
+    category: "Cloud / Services",
+    items: ["Vercel", "Render", "Neon", "Firebase", "Stripe", "Firebase Authentication"],
+  },
+  {
+    category: "Tools",
+    items: ["Git", "GitHub", "Postman", "Vite", "Figma", "WordPress", "Divi", "Linux"],
+  },
+];
+
+export const experience = [
+  {
+    role: "Frontend Developer Intern",
+    company: "Spearmint Technologies",
+    location: "Noida",
+    period: "Apr 2026 – Jul 2026",
+    stack: "React, Next.js, JavaScript, Tailwind CSS, WordPress, Divi, Git",
+    bullets: [
+      "Developed and maintained 8+ production websites using React, Next.js, WordPress, and Divi.",
+      "Built responsive, reusable UI components and integrated REST APIs across client projects.",
+      "Improved frontend performance through lazy loading, image optimization, and targeted UI optimizations.",
+      "Collaborated with developers and designers to ship production features, fix issues, and meet client requirements.",
+    ],
+  },
+];
+
+export const projects = [
+  {
+    name: "Orbit",
+    tagline: "Full-Stack Project Management App",
+    stack: "Next.js, TypeScript, Express, PostgreSQL, Prisma, Zustand, React Query",
+    github: "https://github.com/Deepakk2104/orbit",
+    live: "https://orbit-azure-seven-18.vercel.app/",
+    bullets: [
+      "Built a full-stack Kanban app with drag-and-drop boards, task/comment management, organization-based access control, and JWT authentication.",
+      "Optimized board updates using React Query caching and in-place mutations, reducing redundant API and database requests.",
+      "Implemented position-based ordering for drag-and-drop workflows and validated backend behavior with a 57-test integration suite.",
+    ],
+  },
+  {
+    name: "RankPilot",
+    tagline: "AI SEO Analyzer",
+    stack: "React, Node.js, Express, PostgreSQL, Prisma, JWT",
+    github: "https://github.com/Deepakk2104/rankpilot",
+    live: "https://rankpilot-coral.vercel.app/",
+    bullets: [
+      "Built an SEO audit platform analyzing websites across 11 on-page factors with AI-powered optimization recommendations.",
+      "Developed JWT-secured REST APIs and PostgreSQL/Prisma data models for scan history, rank tracking, and user analytics.",
+      "Deployed the application using Vercel, Render, and Neon with secure CORS and environment-based configuration.",
+    ],
+  },
+  {
+    name: "Learnify",
+    tagline: "AI Course Generator",
+    stack: "React, Firebase, Grok API",
+    github: "https://github.com/Deepakk2104/learnify",
+    live: "https://learnify-sigma-two.vercel.app/",
+    bullets: [
+      "Built an AI course generator that creates personalized learning content from user inputs using the Grok API.",
+      "Developed responsive React workflows and integrated Firebase for application data and course management.",
+    ],
+  },
+];
+
+export const education = [
+  {
+    degree: "Diploma in Computer Science and Engineering",
+    period: "Aug 2026",
+  },
+];
