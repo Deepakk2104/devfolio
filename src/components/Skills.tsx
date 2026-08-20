@@ -53,12 +53,15 @@ export default function Skills() {
               {group.items.map((item, ii) => (
                 <li
                   key={item.name}
-                  style={{ transitionDelay: `${gi * 90 + ii * 40}ms` }}
-                  className={`group flex items-center gap-1.5 rounded-md border border-border bg-background px-2.5 py-1 text-sm text-muted transition-all duration-500 ease-out hover:-translate-y-0.5 hover:border-accent/60 hover:text-foreground hover:shadow-sm ${
-                    inView ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+                  style={{
+                    transitionDelay: `${gi * 90 + ii * 40}ms`,
+                    animationDelay: `${(ii % 8) * 0.35}s`,
+                  }}
+                  className={`skill-pill group flex items-center gap-1.5 rounded-md border border-border bg-background px-2.5 py-1 text-sm text-muted transition-opacity duration-500 ease-out hover:border-accent/60 hover:text-foreground hover:shadow-sm ${
+                    inView ? "opacity-100" : "opacity-0"
                   }`}
                 >
-                  <span className="text-accent/70 transition-transform duration-300 [&>svg]:size-3.5 group-hover:scale-110">
+                  <span className="text-accent/70 [&>svg]:size-3.5 transition-transform duration-300 group-hover:scale-125">
                     <SkillIcon name={item.icon} />
                   </span>
                   {item.name}
