@@ -12,44 +12,47 @@ export const profile = {
     "with hands-on experience building and shipping production web applications using React, Next.js, TypeScript, Node.js, and Express. Skilled in designing REST APIs, relational database schemas, and secure authentication flows, with a strong focus on responsive UI and frontend performance optimization.",
 };
 
-export const skills = [
+type SkillItem = { name: string; icon: string; color?: string };
+type SkillGroup = { category: string; items: SkillItem[] };
+
+export const skills: SkillGroup[] = [
   {
     category: "Languages",
     items: [
-      { name: "JavaScript", icon: "SiJavascript" },
-      { name: "TypeScript", icon: "SiTypescript" },
+      { name: "JavaScript", icon: "SiJavascript", color: "#F7DF1E" },
+      { name: "TypeScript", icon: "SiTypescript", color: "#3178C6" },
       { name: "SQL", icon: "FaDatabase" },
     ],
   },
   {
     category: "Frontend",
     items: [
-      { name: "React.js", icon: "SiReact" },
+      { name: "React.js", icon: "SiReact", color: "#61DAFB" },
       { name: "Next.js", icon: "SiNextdotjs" },
-      { name: "Redux Toolkit", icon: "SiRedux" },
+      { name: "Redux Toolkit", icon: "SiRedux", color: "#764ABC" },
       { name: "Zustand", icon: "FaStore" },
-      { name: "Tailwind CSS", icon: "SiTailwindcss" },
-      { name: "HTML5", icon: "SiHtml5" },
-      { name: "CSS3", icon: "SiCss" },
+      { name: "Tailwind CSS", icon: "SiTailwindcss", color: "#06B6D4" },
+      { name: "HTML5", icon: "SiHtml5", color: "#E34F26" },
+      { name: "CSS3", icon: "SiCss", color: "#663399" },
     ],
   },
   {
     category: "Backend",
     items: [
-      { name: "Node.js", icon: "SiNodedotjs" },
+      { name: "Node.js", icon: "SiNodedotjs", color: "#5FA04E" },
       { name: "Express.js", icon: "SiExpress" },
       { name: "REST APIs", icon: "FaRoute" },
-      { name: "JWT", icon: "FaKey" },
-      { name: "PHP", icon: "SiPhp" },
+      { name: "JWT", icon: "FaKey", color: "#FB015B" },
+      { name: "PHP", icon: "SiPhp", color: "#777BB4" },
     ],
   },
   {
     category: "Databases",
     items: [
-      { name: "PostgreSQL", icon: "SiPostgresql" },
-      { name: "MongoDB", icon: "SiMongodb" },
-      { name: "MySQL", icon: "SiMysql" },
-      { name: "Firebase Firestore", icon: "SiFirebase" },
+      { name: "PostgreSQL", icon: "SiPostgresql", color: "#4169E1" },
+      { name: "MongoDB", icon: "SiMongodb", color: "#47A248" },
+      { name: "MySQL", icon: "SiMysql", color: "#4479A1" },
+      { name: "Firebase Firestore", icon: "SiFirebase", color: "#DD2C00" },
       { name: "Prisma ORM", icon: "SiPrisma" },
     ],
   },
@@ -57,24 +60,24 @@ export const skills = [
     category: "Cloud / Services",
     items: [
       { name: "Vercel", icon: "SiVercel" },
-      { name: "Render", icon: "SiRender" },
-      { name: "Neon", icon: "SiNeon" },
-      { name: "Firebase", icon: "SiFirebase" },
-      { name: "Stripe", icon: "SiStripe" },
-      { name: "Firebase Authentication", icon: "SiFirebase" },
+      { name: "Render", icon: "SiRender", color: "#46E3B7" },
+      { name: "Neon", icon: "SiNeon", color: "#00E599" },
+      { name: "Firebase", icon: "SiFirebase", color: "#DD2C00" },
+      { name: "Stripe", icon: "SiStripe", color: "#635BFF" },
+      { name: "Firebase Authentication", icon: "SiFirebase", color: "#DD2C00" },
     ],
   },
   {
     category: "Tools",
     items: [
-      { name: "Git", icon: "SiGit" },
+      { name: "Git", icon: "SiGit", color: "#F05032" },
       { name: "GitHub", icon: "SiGithub" },
-      { name: "Postman", icon: "SiPostman" },
-      { name: "Vite", icon: "SiVite" },
-      { name: "Figma", icon: "SiFigma" },
-      { name: "WordPress", icon: "SiWordpress" },
-      { name: "Divi", icon: "FaPalette" },
-      { name: "Linux", icon: "SiLinux" },
+      { name: "Postman", icon: "SiPostman", color: "#FF6C37" },
+      { name: "Vite", icon: "SiVite", color: "#646CFF" },
+      { name: "Figma", icon: "SiFigma", color: "#F24E1E" },
+      { name: "WordPress", icon: "SiWordpress", color: "#21759B" },
+      { name: "Divi", icon: "FaPalette", color: "#7E3BD0" },
+      { name: "Linux", icon: "SiLinux", color: "#FCC624" },
     ],
   },
 ];

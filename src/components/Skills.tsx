@@ -44,7 +44,10 @@ export default function Skills() {
           key={key + item.name}
           className="group flex items-center gap-1.5 whitespace-nowrap rounded-md border border-border bg-card px-3 py-1.5 text-sm text-muted transition-colors hover:border-accent/60 hover:text-foreground hover:shadow-sm"
         >
-          <span className="text-accent/70 [&>svg]:size-3.5 transition-transform duration-300 group-hover:scale-125">
+          <span
+            className="[&>svg]:size-4 transition-transform duration-300 group-hover:scale-125"
+            style={item.color ? { color: item.color } : undefined}
+          >
             <SkillIcon name={item.icon} />
           </span>
           {item.name}
