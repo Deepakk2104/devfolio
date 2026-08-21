@@ -119,7 +119,6 @@ export const projects = [
     bullets: [
       "Built an SEO audit platform analyzing websites across 11 on-page factors with AI-powered optimization recommendations.",
       "Developed JWT-secured REST APIs and PostgreSQL/Prisma data models for scan history, rank tracking, and user analytics.",
-      "Deployed the application using Vercel, Render, and Neon with secure CORS and environment-based configuration.",
     ],
   },
   {
