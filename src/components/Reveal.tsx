@@ -1,49 +1,31 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { motion } from "framer-motion";
+import type { ReactNode } from "react";
+import { EASE } from "@/lib/motion";
 
 export default function Reveal({
   children,
   delay = 0,
   duration = 700,
+  y = 28,
   className = "",
 }: {
   children: ReactNode;
   delay?: number;
   duration?: number;
+  y?: number;
   className?: string;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.15 },
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-
   return (
-    <div
-      ref={ref}
-      style={{
-        transitionDelay: `${delay}ms`,
-        transitionDuration: `${duration}ms`,
-      }}
-      className={`transition-all ease-out will-change-transform ${
-        inView ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
-      } ${className}`}
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, y, filter: "blur(6px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: duration / 1000, delay: delay / 1000, ease: EASE }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

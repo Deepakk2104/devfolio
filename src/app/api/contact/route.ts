@@ -2,13 +2,25 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { profile } from "@/data/resume";
 
+let resendClient: Resend | null = null;
+
 const getResend = () => {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    throw new Error("Missing RESEND_API_KEY");
+  if (!resendClient) {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      throw new Error("Missing RESEND_API_KEY");
+    }
+    resendClient = new Resend(apiKey);
   }
-  return new Resend(apiKey);
+  return resendClient;
 };
+
+const escapeHtml = (value: string) =>
+  value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 
 export async function POST(request: Request) {
   try {
@@ -39,10 +51,10 @@ export async function POST(request: Request) {
       text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
       html: `
         <h2>New message from your portfolio</h2>
-        <p><strong>Name:</strong> ${name.replace(/</g, "&lt;")}</p>
-        <p><strong>Email:</strong> ${email.replace(/</g, "&lt;")}</p>
+        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
         <hr />
-        <p>${message.replace(/\n/g, "<br/>").replace(/</g, "&lt;")}</p>
+        <p>${escapeHtml(message).replace(/\n/g, "<br/>")}</p>
       `,
     });
 

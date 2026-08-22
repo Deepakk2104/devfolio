@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Loader2, Mail, Send } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { profile } from "@/data/resume";
+import { EASE } from "@/lib/motion";
 import Reveal from "./Reveal";
 
 const channels = [
@@ -82,12 +84,17 @@ export default function Contact() {
 
       <div className="mt-8 grid gap-6 lg:grid-cols-5">
         <Reveal className="flex flex-col gap-4 lg:col-span-2" delay={100}>
-          {channels.map((c) => (
-            <a
+          {channels.map((c, i) => (
+            <motion.a
               key={c.label}
               href={c.href}
               target={c.href.startsWith("http") ? "_blank" : undefined}
               rel={c.href.startsWith("http") ? "noreferrer" : undefined}
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ delay: 0.15 + i * 0.1, duration: 0.55, ease: EASE }}
+              whileHover={{ y: -3 }}
               className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 transition-colors hover:border-accent/60"
             >
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-accent/10 text-accent">
@@ -97,7 +104,7 @@ export default function Contact() {
                 <span className="block text-sm font-medium">{c.label}</span>
                 <span className="block text-sm text-muted">{c.value}</span>
               </span>
-            </a>
+            </motion.a>
           ))}
           <p className="flex items-center gap-2 pt-2 text-sm text-muted">
             {profile.availability}.
@@ -106,82 +113,100 @@ export default function Contact() {
 
         <Reveal className="lg:col-span-3" delay={200}>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="name" className="text-sm font-medium">
+                  Name
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Your name"
+                  className={inputClass}
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="email" className="text-sm font-medium">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="you@example.com"
+                  className={inputClass}
+                />
+              </div>
+            </div>
+
             <div className="flex flex-col gap-1.5">
-              <label htmlFor="name" className="text-sm font-medium">
-                Name
+              <label htmlFor="message" className="text-sm font-medium">
+                Message
               </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
+              <textarea
+                id="message"
+                name="message"
                 required
-                value={form.name}
+                rows={6}
+                value={form.message}
                 onChange={handleChange}
-                placeholder="Your name"
-                className={inputClass}
+                placeholder="Tell me about your project or opportunity..."
+                className={`${inputClass} resize-none`}
               />
             </div>
-            <div className="flex flex-col gap-1.5">
-              <label htmlFor="email" className="text-sm font-medium">
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                value={form.email}
-                onChange={handleChange}
-                placeholder="you@example.com"
-                className={inputClass}
-              />
-            </div>
-          </div>
 
-          <div className="flex flex-col gap-1.5">
-            <label htmlFor="message" className="text-sm font-medium">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows={6}
-              value={form.message}
-              onChange={handleChange}
-              placeholder="Tell me about your project or opportunity..."
-              className={`${inputClass} resize-none`}
-            />
-          </div>
+            <motion.button
+              type="submit"
+              disabled={status === "sending"}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85 disabled:opacity-60"
+            >
+              {status === "sending" ? (
+                <>
+                  <Loader2 size={16} className="animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <Send size={16} />
+                  Send message
+                </>
+              )}
+            </motion.button>
 
-          <button
-            type="submit"
-            disabled={status === "sending"}
-            className="inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85 disabled:opacity-60"
-          >
-            {status === "sending" ? (
-              <>
-                <Loader2 size={16} className="animate-spin" />
-                Sending...
-              </>
-            ) : (
-              <>
-                <Send size={16} />
-                Send message
-              </>
-            )}
-          </button>
-
-          {status === "sent" && (
-            <p className="text-sm text-green-600 dark:text-green-400">
-              Message sent! I&apos;ll get back to you soon.
-            </p>
-          )}
-          {status === "error" && (
-            <p className="text-sm text-red-600 dark:text-red-400">{errorMsg}</p>
-          )}
-        </form>
+            <AnimatePresence>
+              {status === "sent" && (
+                <motion.p
+                  key="sent"
+                  initial={{ opacity: 0, y: 8, scale: 0.97 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="text-sm text-green-600 dark:text-green-400"
+                >
+                  Message sent! I&apos;ll get back to you soon.
+                </motion.p>
+              )}
+              {status === "error" && (
+                <motion.p
+                  key="error"
+                  initial={{ opacity: 0, y: 8, scale: 0.97 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="text-sm text-red-600 dark:text-red-400"
+                >
+                  {errorMsg}
+                </motion.p>
+              )}
+            </AnimatePresence>
+          </form>
         </Reveal>
       </div>
     </section>

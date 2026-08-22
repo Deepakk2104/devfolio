@@ -1,5 +1,8 @@
+"use client";
+
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { projects } from "@/data/resume";
 import Reveal from "./Reveal";
@@ -66,7 +69,11 @@ export default function Projects() {
 
       <div className="mt-8 flex flex-col gap-6">
         <Reveal duration={900}>
-          <article className="grid overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg md:grid-cols-2">
+          <motion.article
+            whileHover={{ y: -6 }}
+            transition={{ type: "spring", stiffness: 280, damping: 22 }}
+            className="grid overflow-hidden rounded-xl border border-border bg-card transition-colors duration-300 hover:border-accent/60 hover:shadow-lg md:grid-cols-2"
+          >
             <div className="relative aspect-[16/9] bg-background md:aspect-auto md:min-h-[24rem]">
               {featured.image ? (
                 <Image
@@ -87,13 +94,17 @@ export default function Projects() {
               <ProjectMeta p={featured} />
               <ProjectLinks p={featured} />
             </div>
-          </article>
+          </motion.article>
         </Reveal>
 
         <div className="grid gap-6 md:grid-cols-2">
           {rest.map((p, i) => (
             <Reveal key={p.name} delay={i * 120} duration={900}>
-              <article className="flex h-full flex-col rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-lg">
+              <motion.article
+                whileHover={{ y: -6 }}
+                transition={{ type: "spring", stiffness: 280, damping: 22 }}
+                className="flex h-full flex-col rounded-xl border border-border bg-card p-6 transition-colors duration-300 hover:border-accent/60 hover:shadow-lg"
+              >
                 {p.image ? (
                   <div className="relative -mx-6 -mt-6 aspect-[16/9] w-[calc(100%+3rem)] overflow-hidden rounded-t-xl border-b border-border bg-background">
                     <Image
@@ -116,7 +127,7 @@ export default function Projects() {
                     <ProjectLinks p={p} />
                   </div>
                 </div>
-              </article>
+              </motion.article>
             </Reveal>
           ))}
         </div>

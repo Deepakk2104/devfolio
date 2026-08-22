@@ -1,11 +1,13 @@
 import { Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { profile } from "@/data/resume";
+import Reveal from "./Reveal";
 
 export default function Footer() {
   return (
     <footer className="border-t border-border/70">
-      <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
+      <Reveal y={14} duration={700}>
+        <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
         <p className="text-sm text-muted">
           © {new Date().getFullYear()} {profile.name}. Designed & built by me.
         </p>
@@ -36,7 +38,8 @@ export default function Footer() {
             <Mail size={18} />
           </a>
         </div>
-      </div>
+        </div>
+      </Reveal>
     </footer>
   );
 }
