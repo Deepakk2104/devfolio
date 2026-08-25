@@ -9,7 +9,7 @@ import { EASE } from "@/lib/motion";
 import Reveal from "./Reveal";
 
 export const resumeUrl =
-  "https://drive.google.com/file/d/10ooOttla1dVY1O-8db7hrhpOCOvko3za/view?usp=drive_open";
+  "https://drive.google.com/file/d/1Dcz91L2Gfnk7rXG7DmuV_79Pt_dXO3vb/view?usp=sharing";
 
 const hoverTap = {
   whileHover: { y: -3 },
